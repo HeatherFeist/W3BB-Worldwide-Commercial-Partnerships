@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="dark" />
+<title>W3BB Worldwide — U.S. Business Partner Services</title>
+<meta name="description" content="W3BB Worldwide gives international e-commerce sellers a U.S. mailing address, U.S.-based customer support, returns handling, and marketplace compliance guidance." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bg: '#0a1020',
+          card: '#121a2e',
+          cardHover: '#182238',
+          accent: '#22d3c8',
+          accentLight: '#5eead4',
+          accentDark: '#0f9c93',
+          gold: '#f4b740',
+          goldDark: '#d99a1f',
+          muted: '#8a93ab',
+          border: 'rgba(255,255,255,0.08)',
+        },
+        fontFamily: { inter: ['Inter', 'sans-serif'] },
+      },
+    },
+  };
+</script>
+<script src="https://unpkg.com/lucide@latest" defer></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #0a1020; color: #fff; overflow-x: hidden; }
+  .nav-scrolled { background: rgba(10, 16, 32, 0.88) !important; backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(34,211,200,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,200,0.06) 1px, transparent 1px); background-size: 56px 56px; pointer-events: none; mask-image: linear-gradient(to bottom, black, transparent); }
+  .hero-orb { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.3; animation: orbFloat 9s ease-in-out infinite alternate; pointer-events: none; }
+  .hero-orb-1 { width: 480px; height: 480px; background: #22d3c8; top: -160px; left: 5%; }
+  .hero-orb-2 { width: 380px; height: 380px; background: #f4b740; bottom: -120px; right: 8%; animation-delay: 3s; }
+  @keyframes orbFloat { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(30px,-20px) scale(1.08); } }
+  .card-rise { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+  .card-rise:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,.4); }
+  .pricing-featured { border: 2px solid #22d3c8; box-shadow: 0 0 40px rgba(34,211,200,.18); }
+  .pricing-gold { border: 2px solid #f4b740; box-shadow: 0 0 40px rgba(244,183,64,.18); }
+  .fade-in-up { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+  .faq-answer.open { max-height: 280px; }
+  .faq-chevron { transition: transform .3s ease; }
+  .faq-chevron.open { transform: rotate(180deg); }
+  .step-card { position: relative; overflow: hidden; }
+  .step-number { position: absolute; top: -14px; right: -6px; font-size: 6rem; font-weight: 900; color: rgba(34,211,200,.07); line-height: 1; pointer-events: none; }
+  .hex-logo { width: 34px; height: 34px; }
+</style>
+</head>
+<body class="font-inter">
+
+<!-- NAV -->
+<header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2">
+      <svg class="hex-logo text-accent" viewBox="0 0 32 32" fill="none">
+        <path d="M16 2 L29 9 V23 L16 30 L3 23 V9 Z" stroke="currentColor" stroke-width="2" fill="rgba(34,211,200,0.12)"/>
+        <path d="M16 9 L23 13 V20 L16 24 L9 20 V13 Z" fill="currentColor" opacity="0.85"/>
+      </svg>
+      <span class="text-lg font-bold tracking-tight">W3BB <span class="text-accent">WORLDWIDE</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="#what-we-do" class="text-sm text-muted hover:text-white transition-colors">What We Do</a>
+      <a href="#packages" class="text-sm text-muted hover:text-white transition-colors">Packages</a>
+      <a href="#how-it-works" class="text-sm text-muted hover:text-white transition-colors">How It Works</a>
+      <a href="#faq" class="text-sm text-muted hover:text-white transition-colors">FAQ</a>
+    </nav>
+    <a href="#contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accentDark text-bg text-sm font-semibold px-5 py-2.5 rounded-lg transition-all">Get Started</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative pt-36 pb-24 px-4 md:px-8 overflow-hidden">
+  <div class="hero-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="max-w-4xl mx-auto text-center relative z-10">
+    <span class="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-accentLight text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
+      <i data-lucide="globe" class="w-3.5 h-3.5"></i> A U.S. Gateway for Global Sellers
+    </span>
+    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+      Your U.S. Presence,<br/><span class="text-accent">Powered by W3BB Worldwide</span>
+    </h1>
+    <p class="text-lg text-muted max-w-2xl mx-auto mb-10">
+      A U.S. mailing address, U.S.-based customer support, returns handling, and marketplace
+      compliance guidance — so you can sell to American customers without opening a U.S. office.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#packages" class="inline-flex items-center gap-2 bg-accent hover:bg-accentDark text-bg font-semibold px-7 py-3.5 rounded-lg transition-all">
+        View Packages <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+      <a href="#contact" class="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold px-7 py-3.5 rounded-lg transition-all">
+        Talk to Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST DISCLOSURE STRIP -->
+<section class="border-y border-white/5 bg-white/[0.02] py-4 px-4">
+  <p class="max-w-4xl mx-auto text-center text-xs text-muted">
+    W3BB Worldwide is an independent U.S. service provider operating under a written service
+    agreement with each client. We represent our own business — not yours — and disclose our
+    role as your back-office partner in every interaction we handle on your behalf.
+  </p>
+</section>
+
+<!-- WHAT WE DO -->
+<section id="what-we-do" class="py-24 px-4 md:px-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 fade-in-up">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-4">What We Do</h2>
+      <p class="text-muted max-w-2xl mx-auto">
+        Selling into the U.S. market without a U.S. presence means slow returns, missed support
+        windows, and marketplace policies you can't always navigate alone. We handle the U.S. side
+        so you can focus on your product.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-card border border-border rounded-2xl p-7 card-rise fade-in-up">
+        <div class="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-5"><i data-lucide="map-pin" class="w-6 h-6 text-accent"></i></div>
+        <h3 class="font-bold text-lg mb-2">U.S. Mailing Address</h3>
+        <p class="text-sm text-muted">A registered commercial mailing address for mail and package receipt, with forwarding handled on your schedule.</p>
+      </div>
+      <div class="bg-card border border-border rounded-2xl p-7 card-rise fade-in-up">
+        <div class="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-5"><i data-lucide="headset" class="w-6 h-6 text-accent"></i></div>
+        <h3 class="font-bold text-lg mb-2">U.S.-Based Customer Support</h3>
+        <p class="text-sm text-muted">A dedicated support inbox staffed in U.S. business hours, using response templates approved by you.</p>
+      </div>
+      <div class="bg-card border border-border rounded-2xl p-7 card-rise fade-in-up">
+        <div class="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-5"><i data-lucide="package-check" class="w-6 h-6 text-accent"></i></div>
+        <h3 class="font-bold text-lg mb-2">Returns Handling</h3>
+        <p class="text-sm text-muted">Returned packages are received, inspected, and forwarded or disposed of per your written instructions.</p>
+      </div>
+      <div class="bg-card border border-border rounded-2xl p-7 card-rise fade-in-up">
+        <div class="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-5"><i data-lucide="shield-check" class="w-6 h-6 text-accent"></i></div>
+        <h3 class="font-bold text-lg mb-2">Marketplace Compliance Guidance</h3>
+        <p class="text-sm text-muted">Help understanding Amazon, Etsy, and Shopify seller policies, shipping-policy requirements, and disclosure rules.</p>
+      </div>
+      <div class="bg-card border border-border rounded-2xl p-7 card-rise fade-in-up">
+        <div class="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-5"><i data-lucide="palette" class="w-6 h-6 text-accent"></i></div>
+        <h3 class="font-bold text-lg mb-2">Brand & Storefront Support</h3>
+        <p class="text-sm text-muted">Guidance on product descriptions, storefront layout, and presentation for U.S. shoppers.</p>
+      </div>
+      <div class="bg-card border border-border rounded-2xl p-7 card-rise fade-in-up">
+        <div class="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-5"><i data-lucide="file-check-2" class="w-6 h-6 text-accent"></i></div>
+        <h3 class="font-bold text-lg mb-2">Written Service Agreement</h3>
+        <p class="text-sm text-muted">Every engagement runs on a clear contract defining scope, fees, responsibilities, and termination terms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" class="py-24 px-4 md:px-8 bg-white/[0.02]">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 fade-in-up">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Service Packages</h2>
+      <p class="text-muted max-w-2xl mx-auto">Three tiers built to scale with your business in the U.S. market.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 items-start">
+
+      <!-- Package A -->
+      <div class="bg-card border border-border rounded-2xl p-8 card-rise fade-in-up">
+        <h3 class="text-xl font-bold mb-1">U.S. Address Only</h3>
+        <p class="text-sm text-muted mb-6">Perfect for small sellers getting started.</p>
+        <div class="mb-6"><span class="text-4xl font-extrabold">$49</span><span class="text-muted">/mo</span></div>
+        <ul class="space-y-3 mb-8 text-sm">
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Use of U.S. business mailing address</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Mail forwarding</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Basic compliance guidance</li>
+        </ul>
+        <div id="paypal-address" class="min-h-[44px]"></div>
+        <a href="#contact" data-paypal-fallback class="hidden w-full text-center bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold px-5 py-3 rounded-lg transition-all">Get Started</a>
+      </div>
+
+      <!-- Package B - Featured -->
+      <div class="bg-card pricing-featured rounded-2xl p-8 card-rise fade-in-up relative">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-bg text-xs font-bold px-3 py-1 rounded-full">MOST POPULAR</span>
+        <h3 class="text-xl font-bold mb-1">U.S. Business Partner</h3>
+        <p class="text-sm text-muted mb-6">Our most popular tier for active sellers.</p>
+        <div class="mb-6"><span class="text-4xl font-extrabold">$99</span><span class="text-muted">/mo</span></div>
+        <ul class="space-y-3 mb-8 text-sm">
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> U.S. mailing address</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Returns handling</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Dedicated customer support inbox</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Brand representation support</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Marketplace compliance guidance</li>
+        </ul>
+        <div id="paypal-partner" class="min-h-[44px]"></div>
+        <a href="#contact" data-paypal-fallback class="hidden w-full text-center bg-accent hover:bg-accentDark text-bg font-semibold px-5 py-3 rounded-lg transition-all">Get Started</a>
+      </div>
+
+      <!-- Package C -->
+      <div class="bg-card pricing-gold rounded-2xl p-8 card-rise fade-in-up">
+        <h3 class="text-xl font-bold mb-1">Full U.S. Presence</h3>
+        <p class="text-sm text-muted mb-6">End-to-end support for growing brands.</p>
+        <div class="mb-6"><span class="text-4xl font-extrabold">$199</span><span class="text-muted">/mo + 5% of sales</span></div>
+        <ul class="space-y-3 mb-8 text-sm">
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i> Everything in Business Partner</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i> Storefront setup (Shopify, Etsy, Amazon)</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i> Branding support</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i> Marketing guidance</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i> Full compliance support</li>
+        </ul>
+        <div id="paypal-full" class="min-h-[44px]"></div>
+        <a href="#contact" data-paypal-fallback class="hidden w-full text-center bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold px-5 py-3 rounded-lg transition-all">Get Started</a>
+      </div>
+
+    </div>
+    <p class="text-center text-xs text-muted mt-8">All packages require a signed service agreement. Pricing subject to change with 30 days' notice.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="py-24 px-4 md:px-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 fade-in-up">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-4">How It Works</h2>
+      <p class="text-muted max-w-2xl mx-auto">From signup to a fully operational U.S. presence in days, not months.</p>
+    </div>
+    <div class="grid md:grid-cols-4 gap-6">
+      <div class="step-card bg-card border border-border rounded-2xl p-6 fade-in-up">
+        <span class="step-number">1</span>
+        <h3 class="font-bold mb-2 relative z-10">Sign the Agreement</h3>
+        <p class="text-sm text-muted relative z-10">Tell us about your business, products, and country. Sign the service agreement and choose a plan.</p>
+      </div>
+      <div class="step-card bg-card border border-border rounded-2xl p-6 fade-in-up">
+        <span class="step-number">2</span>
+        <h3 class="font-bold mb-2 relative z-10">Get Your U.S. Address</h3>
+        <p class="text-sm text-muted relative z-10">We assign your commercial mailing address and set up your dedicated support inbox.</p>
+      </div>
+      <div class="step-card bg-card border border-border rounded-2xl p-6 fade-in-up">
+        <span class="step-number">3</span>
+        <h3 class="font-bold mb-2 relative z-10">We Handle the U.S. Side</h3>
+        <p class="text-sm text-muted relative z-10">Mail, returns, and customer messages are managed using the templates and instructions you approve.</p>
+      </div>
+      <div class="step-card bg-card border border-border rounded-2xl p-6 fade-in-up">
+        <span class="step-number">4</span>
+        <h3 class="font-bold mb-2 relative z-10">Scale Up</h3>
+        <p class="text-sm text-muted relative z-10">Upgrade your plan as volume grows, or add storefront and branding support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-24 px-4 md:px-8 bg-white/[0.02]">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-12 fade-in-up">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Frequently Asked Questions</h2>
+    </div>
+    <div class="space-y-3" id="faq-list">
+      <div class="bg-card border border-border rounded-xl overflow-hidden faq-item">
+        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold">
+          Will my business appear to be U.S.-based?
+          <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-muted"></i>
+        </button>
+        <div class="faq-answer px-5"><p class="text-sm text-muted pb-5">No. We provide a real U.S. mailing address and U.S.-based support for your operations — we do not represent your business as American-owned or located in the U.S. if it isn't. Marketplace and consumer-disclosure rules require accurate seller information, and we help you stay compliant with them, not work around them.</p></div>
+      </div>
+      <div class="bg-card border border-border rounded-xl overflow-hidden faq-item">
+        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold">
+          Do you handle my payments or hold my funds?
+          <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-muted"></i>
+        </button>
+        <div class="faq-answer px-5"><p class="text-sm text-muted pb-5">No. You keep your own payment processor and bank account. We never take custody of your sales proceeds.</p></div>
+      </div>
+      <div class="bg-card border border-border rounded-xl overflow-hidden faq-item">
+        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold">
+          What products or sellers can't you work with?
+          <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-muted"></i>
+        </button>
+        <div class="faq-answer px-5"><p class="text-sm text-muted pb-5">We don't work with counterfeit goods, weapons, drugs, or other high-risk or unlawful categories, and we vet every client before signing an agreement.</p></div>
+      </div>
+      <div class="bg-card border border-border rounded-xl overflow-hidden faq-item">
+        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left font-semibold">
+          Can I cancel anytime?
+          <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-muted"></i>
+        </button>
+        <div class="faq-answer px-5"><p class="text-sm text-muted pb-5">Yes. Either party can terminate per the notice terms in the service agreement.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 px-4 md:px-8">
+  <div class="max-w-2xl mx-auto">
+    <div class="text-center mb-10 fade-in-up">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Get Started</h2>
+      <p class="text-muted">Tell us about your business and we'll follow up with next steps.</p>
+    </div>
+    <form id="intake-form" class="bg-card border border-border rounded-2xl p-8 space-y-5 fade-in-up">
+      <div class="grid md:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-sm font-semibold mb-1.5">Business Name</label>
+          <input required name="businessName" type="text" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-accent" />
+        </div>
+        <div>
+          <label class="block text-sm font-semibold mb-1.5">Country</label>
+          <input required name="country" type="text" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-accent" />
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-sm font-semibold mb-1.5">Product Type</label>
+          <input required name="productType" type="text" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-accent" />
+        </div>
+        <div>
+          <label class="block text-sm font-semibold mb-1.5">Preferred Plan</label>
+          <select name="plan" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-accent">
+            <option value="U.S. Address Only ($49/mo)">U.S. Address Only — $49/mo</option>
+            <option value="U.S. Business Partner ($99/mo)" selected>U.S. Business Partner — $99/mo</option>
+            <option value="Full U.S. Presence ($199/mo + 5%)">Full U.S. Presence — $199/mo + 5%</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold mb-1.5">Email</label>
+        <input required name="email" type="email" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-accent" />
+      </div>
+      <div>
+        <label class="block text-sm font-semibold mb-1.5">What do you need help with?</label>
+        <textarea name="notes" rows="4" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-accent"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-accent hover:bg-accentDark text-bg font-semibold px-6 py-3.5 rounded-lg transition-all">Send Inquiry</button>
+      <p class="text-xs text-muted text-center">Submitting opens an email to support@w3bbworldwide.com with your details pre-filled.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/5 py-10 px-4 md:px-8">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <span class="text-sm text-muted">© <span id="year"></span> W3BB Worldwide Commerce Services LLC. All rights reserved.</span>
+    <span class="text-sm text-muted">support@w3bbworldwide.com</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Sticky nav background on scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('nav-scrolled', window.scrollY > 20);
+  });
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling;
+      const chevron = btn.querySelector('.faq-chevron');
+      answer.classList.toggle('open');
+      chevron.classList.toggle('open');
+    });
+  });
+
+  // Intake form -> mailto fallback (no backend wired yet)
+  const SUPPORT_EMAIL = 'support@w3bbworldwide.com';
+  document.getElementById('intake-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const f = new FormData(e.target);
+    const subject = `New W3BB Worldwide Inquiry — ${f.get('businessName')}`;
+    const body = [
+      `Business Name: ${f.get('businessName')}`,
+      `Country: ${f.get('country')}`,
+      `Product Type: ${f.get('productType')}`,
+      `Preferred Plan: ${f.get('plan')}`,
+      `Email: ${f.get('email')}`,
+      `Notes: ${f.get('notes') || '—'}`,
+    ].join('\n');
+    window.location.href = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+
+  // ---------------------------------------------------------------
+  // PayPal subscription buttons.
+  // TODO: replace these with your live PayPal client ID and the
+  // subscription Plan IDs created under PayPal Dashboard > Pay & Get
+  // Paid > Subscriptions > Plans (one plan per package).
+  // Until replaced, the buttons fall back to "Get Started" links
+  // that scroll to the contact form.
+  // ---------------------------------------------------------------
+  const PAYPAL_CONFIG = {
+    clientId: 'YOUR_PAYPAL_CLIENT_ID',
+    plans: {
+      address: 'YOUR_PLAN_ID_ADDRESS_ONLY',
+      partner: 'YOUR_PLAN_ID_BUSINESS_PARTNER',
+      full: 'YOUR_PLAN_ID_FULL_PRESENCE',
+    },
+  };
+
+  function renderPayPalButton(containerId, planId) {
+    paypal.Buttons({
+      style: { shape: 'pill', color: 'gold', layout: 'horizontal', label: 'subscribe' },
+      createSubscription(_data, actions) {
+        return actions.subscription.create({ plan_id: planId });
+      },
+      onApprove(data) {
+        window.location.href = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent('New W3BB Subscription')}&body=${encodeURIComponent('Subscription ID: ' + data.subscriptionID)}`;
+      },
+    }).render(`#${containerId}`);
+  }
+
+  function initPayPal() {
+    const configured = PAYPAL_CONFIG.clientId !== 'YOUR_PAYPAL_CLIENT_ID';
+    if (!configured) {
+      document.querySelectorAll('[data-paypal-fallback]').forEach(el => el.classList.remove('hidden'));
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = `https://www.paypal.com/sdk/js?client-id=${PAYPAL_CONFIG.clientId}&vault=true&intent=subscription`;
+    script.onload = () => {
+      renderPayPalButton('paypal-address', PAYPAL_CONFIG.plans.address);
+      renderPayPalButton('paypal-partner', PAYPAL_CONFIG.plans.partner);
+      renderPayPalButton('paypal-full', PAYPAL_CONFIG.plans.full);
+    };
+    document.body.appendChild(script);
+  }
+  initPayPal();
+
+  // Lucide icons
+  window.addEventListener('load', () => { if (window.lucide) lucide.createIcons(); });
+</script>
+</body>
+</html>
