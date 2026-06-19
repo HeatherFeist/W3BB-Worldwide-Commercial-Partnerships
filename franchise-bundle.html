@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="dark" />
+<title>Franchise Bundle System — W3BB Worldwide</title>
+<meta name="description" content="The W3BB Franchise Bundle System lets entrepreneurs package their business into a digital, duplicatable model that others can purchase and launch." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bg: '#0a1020', card: '#121a2e', cardHover: '#182238',
+          accent: '#22d3c8', accentLight: '#5eead4', accentDark: '#0f9c93',
+          gold: '#f4b740', goldDark: '#d99a1f', muted: '#8a93ab',
+          border: 'rgba(255,255,255,0.08)',
+        },
+        fontFamily: { inter: ['Inter', 'sans-serif'] },
+      },
+    },
+  };
+</script>
+<script src="https://unpkg.com/lucide@latest" defer></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #0a1020; color: #fff; overflow-x: hidden; }
+  .nav-scrolled { background: rgba(10, 16, 32, 0.88) !important; backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(34,211,200,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,200,0.06) 1px, transparent 1px); background-size: 56px 56px; pointer-events: none; mask-image: linear-gradient(to bottom, black, transparent); }
+  .hero-orb { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.3; animation: orbFloat 9s ease-in-out infinite alternate; pointer-events: none; }
+  .hero-orb-1 { width: 480px; height: 480px; background: #22d3c8; top: -160px; left: 5%; }
+  .hero-orb-2 { width: 380px; height: 380px; background: #f4b740; bottom: -120px; right: 8%; animation-delay: 3s; }
+  @keyframes orbFloat { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(30px,-20px) scale(1.08); } }
+  .card-rise { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+  .card-rise:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,.4); }
+  .fade-in-up { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+  .step-card { position: relative; overflow: hidden; }
+  .step-number { position: absolute; top: -14px; right: -6px; font-size: 6rem; font-weight: 900; color: rgba(34,211,200,.07); line-height: 1; pointer-events: none; }
+  .hex-logo { width: 34px; height: 34px; }
+</style>
+</head>
+<body class="font-inter">
+
+<!-- NAV -->
+<header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+      <svg class="hex-logo text-accent" viewBox="0 0 32 32" fill="none">
+        <path d="M16 2 L29 9 V23 L16 30 L3 23 V9 Z" stroke="currentColor" stroke-width="2" fill="rgba(34,211,200,0.12)"/>
+        <path d="M16 9 L23 13 V20 L16 24 L9 20 V13 Z" fill="currentColor" opacity="0.85"/>
+      </svg>
+      <span class="text-lg font-bold tracking-tight">W3BB <span class="text-accent">WORLDWIDE</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="index.html#what-we-do" class="text-sm text-muted hover:text-white transition-colors">What We Do</a>
+      <a href="index.html#packages" class="text-sm text-muted hover:text-white transition-colors">Packages</a>
+      <div class="relative">
+        <button id="programs-trigger" class="flex items-center gap-1 text-sm text-white transition-colors">
+          Programs <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+        </button>
+        <div id="programs-menu" class="hidden absolute left-0 top-full mt-3 w-64 bg-card border border-border rounded-xl shadow-2xl py-2 z-50">
+          <a href="launchpad.html" class="block px-4 py-2.5 text-sm text-muted hover:text-white hover:bg-white/5 transition-colors">Entrepreneur Launchpad</a>
+          <a href="zero-dollar-startup.html" class="block px-4 py-2.5 text-sm text-muted hover:text-white hover:bg-white/5 transition-colors">Zero-Dollar Startup Path</a>
+          <a href="agency-partner-program.html" class="block px-4 py-2.5 text-sm text-muted hover:text-white hover:bg-white/5 transition-colors">Agency Partner Program</a>
+          <a href="affiliate-program.html" class="block px-4 py-2.5 text-sm text-muted hover:text-white hover:bg-white/5 transition-colors">Affiliate Partnership Program</a>
+          <a href="franchise-bundle.html" class="block px-4 py-2.5 text-sm font-semibold text-accent hover:bg-white/5 transition-colors">Franchise Bundle System</a>
+          <a href="business-services.html" class="block px-4 py-2.5 text-sm text-muted hover:text-white hover:bg-white/5 transition-colors">Business Services</a>
+          <div class="border-t border-border my-1"></div>
+          <a href="choose-your-path.html" class="block px-4 py-2.5 text-sm font-semibold text-accent hover:bg-white/5 transition-colors">Choose Your Path →</a>
+        </div>
+      </div>
+      <a href="index.html#how-it-works" class="text-sm text-muted hover:text-white transition-colors">How It Works</a>
+      <a href="index.html#faq" class="text-sm text-muted hover:text-white transition-colors">FAQ</a>
+    </nav>
+    <a href="index.html#contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accentDark text-bg text-sm font-semibold px-5 py-2.5 rounded-lg transition-all">Get Started</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative pt-36 pb-20 px-4 md:px-8 overflow-hidden">
+  <div class="hero-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="max-w-4xl mx-auto text-center relative z-10">
+    <span class="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-accentLight text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
+      <i data-lucide="layers" class="w-3.5 h-3.5"></i> Scale Beyond Yourself
+    </span>
+    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+      Franchise <span class="text-accent">Bundle System</span>
+    </h1>
+    <p class="text-lg text-muted max-w-2xl mx-auto mb-4">
+      Turn your business into a digital franchise and earn royalties.
+    </p>
+    <p class="text-base text-muted max-w-2xl mx-auto mb-10">
+      The W3BB Franchise Bundle System allows entrepreneurs to package their business into a digital,
+      duplicatable model that others can purchase and launch.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="mailto:support@w3bbworldwide.com?subject=Franchise%20Bundle%20System%20Inquiry" class="inline-flex items-center gap-2 bg-accent hover:bg-accentDark text-bg font-semibold px-7 py-3.5 rounded-lg transition-all">
+        Build a Franchise Bundle <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+      <a href="choose-your-path.html" class="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold px-7 py-3.5 rounded-lg transition-all">
+        See All Paths
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="py-20 px-4 md:px-8 bg-white/[0.02]">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12 fade-in-up">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-4">What's Included in a Franchise Bundle</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-card border border-border rounded-2xl p-7 card-rise fade-in-up"><i data-lucide="briefcase" class="w-6 h-6 text-accent mb-4"></i><p class="text-sm font-semibold">Business model</p></div>
+      <div class="bg-card border border-border rounded-2xl p-7 card-rise fade-in-up"><i data-lucide="palette" class="w-6 h-6 text-accent mb-4"></i><p class="text-sm font-semibold">Branding</p></div>
+      <div class="bg-card border border-border rounded-2xl p-7 card-rise fade-in-up"><i data-lucide="layout-template" class="w-6 h-6 text-accent mb-4"></i><p class="text-sm font-semibold">Website templates</p></div>
+      <div class="bg-card border border-border rounded-2xl p-7 card-rise fade-in-up"><i data-lucide="folder" class="w-6 h-6 text-accent mb-4"></i><p class="text-sm font-semibold">Digital assets</p></div>
+      <div class="bg-card border border-border rounded-2xl p-7 card-rise fade-in-up"><i data-lucide="list-checks" class="w-6 h-6 text-accent mb-4"></i><p class="text-sm font-semibold">SOPs and workflows</p></div>
+      <div class="bg-card border border-border rounded-2xl p-7 card-rise fade-in-up"><i data-lucide="megaphone" class="w-6 h-6 text-accent mb-4"></i><p class="text-sm font-semibold">Marketing materials</p></div>
+      <div class="bg-card border border-border rounded-2xl p-7 card-rise fade-in-up md:col-span-3"><i data-lucide="graduation-cap" class="w-6 h-6 text-accent mb-4"></i><p class="text-sm font-semibold">Training modules</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="py-20 px-4 md:px-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12 fade-in-up">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-4">How It Works</h2>
+    </div>
+    <div class="grid md:grid-cols-4 gap-6">
+      <div class="step-card bg-card border border-border rounded-2xl p-6 fade-in-up">
+        <span class="step-number">1</span>
+        <h3 class="font-bold mb-2 relative z-10">Build Your Business</h3>
+      </div>
+      <div class="step-card bg-card border border-border rounded-2xl p-6 fade-in-up">
+        <span class="step-number">2</span>
+        <h3 class="font-bold mb-2 relative z-10">Package It With Our Help</h3>
+      </div>
+      <div class="step-card bg-card border border-border rounded-2xl p-6 fade-in-up">
+        <span class="step-number">3</span>
+        <h3 class="font-bold mb-2 relative z-10">List It in the W3BB Marketplace</h3>
+      </div>
+      <div class="step-card bg-card border border-border rounded-2xl p-6 fade-in-up">
+        <span class="step-number">4</span>
+        <h3 class="font-bold mb-2 relative z-10">Earn Royalties Every Time Someone Launches Your Model</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="py-24 px-4 md:px-8 bg-white/[0.02]">
+  <div class="max-w-3xl mx-auto text-center fade-in-up">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-4">This Is the Future of Digital Entrepreneurship</h2>
+    <p class="text-muted mb-10">
+      Your business becomes a product.<br/>Your knowledge becomes an asset.<br/>Your success becomes scalable.
+    </p>
+    <a href="mailto:support@w3bbworldwide.com?subject=Franchise%20Bundle%20System%20Inquiry" class="inline-flex items-center gap-2 bg-accent hover:bg-accentDark text-bg font-semibold px-7 py-3.5 rounded-lg transition-all">
+      Build a Franchise Bundle <i data-lucide="arrow-right" class="w-4 h-4"></i>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/5 py-10 px-4 md:px-8">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <span class="text-sm text-muted">© <span id="year"></span> W3BB Worldwide Commerce Services LLC. All rights reserved.</span>
+    <span class="text-sm text-muted">support@w3bbworldwide.com</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('nav-scrolled', window.scrollY > 20);
+  });
+
+  const programsTrigger = document.getElementById('programs-trigger');
+  const programsMenu = document.getElementById('programs-menu');
+  if (programsTrigger && programsMenu) {
+    programsTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      programsMenu.classList.toggle('hidden');
+    });
+    document.addEventListener('click', () => programsMenu.classList.add('hidden'));
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+  window.addEventListener('load', () => { if (window.lucide) lucide.createIcons(); });
+</script>
+</body>
+</html>
